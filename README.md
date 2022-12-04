@@ -26,6 +26,11 @@ Nuestra primera versión del caparazón no hará nada elegante; simplemente impr
 
 Lo primero que haremos será escribir nuestro bucle REPL básico. Crear un archivo llamado main.c
 
+
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
