@@ -22,11 +22,9 @@ Las utilidades integradas incluyen comandos de uso común, comocd, fg, ybg. Impl
 Ahora que conocemos los componentes básicos de un shell típico de Linux, comencemos a construir nuestro propio shell.
 
 Nuestra primera concha
-Nuestra primera versión del caparazón no hará nada elegante; simplemente imprimirá una cadena de solicitud, leerá una línea de entrada y luego repetirá la entrada en la pantalla. En partes posteriores de este tutorial, agregaremos la capacidad de analizar y ejecutar comandos, bucles, expresiones condicionales y mucho más.
+Nuestra primera versión del caparazón no hará nada elegante; simplemente imprimirá una cadena de solicitud, leerá una línea de entrada y luego repetirá la entrada en la pantalla. 
 
-Comencemos por crear un directorio para este proyecto. yo suelo usar~/projects/ para mis nuevos proyectos, pero siéntete libre de usar cualquier camino con el que te sientas cómodo.
-
-Lo primero que haremos será escribir nuestro bucle REPL básico. Crear un archivo llamadomain.c(usandotouch main.c), luego ábralo usando su editor de texto favorito. Ingrese el siguiente código en sumain.cexpediente:
+Lo primero que haremos será escribir nuestro bucle REPL básico. Crear un archivo llamado main.c
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -69,9 +67,11 @@ int main(int argc, char **argv)
 
     exit(EXIT_SUCCESS);
 }
-Nuestromain()La función es bastante simple, ya que solo necesita implementar el bucle REPL. Primero imprimimos el indicador del shell, luego leemos un comando (por ahora, definamos un comando como una línea de entrada que termina con\n). Si hay un error al leer el comando, salimos del shell. Si el comando está vacío (es decir, el usuario presionóENTERsin escribir nada), salteamos esta entrada y continuamos con el bucle.
 
-Si el comando esexit, salimos del shell. De lo contrario, hacemos eco del comando, liberamos la memoria que usamos para almacenar el comando y continuamos con el bucle. Bastante simple, ¿no?
+
+Nuestro main()La función necesita implementar el bucle REPL. Primero imprimimos el indicador del shell, luego leemos un comando (por ahora, definamos un comando como una línea de entrada que termina con\n). Si hay un error al leer el comando, salimos del shell. Si el comando está vacío (es decir, el usuario presionóENTERsin escribir nada), salteamos esta entrada y continuamos con el bucle.
+
+Si el comando esexit, salimos del shell. De lo contrario, hacemos eco del comando, liberamos la memoria que usamos para almacenar el comando y continuamos con el bucle. 
 
 Nuestromain()función llama a dos funciones personalizadas,print_prompt1()yread_cmd(). La primera función imprime la cadena de solicitud y la segunda lee la siguiente línea de entrada. Echemos un vistazo más de cerca a esas dos funciones.
 
@@ -206,7 +206,7 @@ imagen
 Ahora compile el shell usando el siguiente comando:
 
 gcc -o shell main.c prompt.c
-Si todo va bien,gccno debería generar nada, y debería haber un archivo ejecutable llamadoshellen el directorio actual:
+
 
 
 
