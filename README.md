@@ -1,4 +1,4 @@
-# shell_test
+
 testing make own shell 
 Componentes de un shell de Linux
 El shell es una pieza compleja de software que contiene muchas partes diferentes.
